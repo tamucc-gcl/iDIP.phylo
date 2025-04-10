@@ -21,5 +21,5 @@ library(HierDpart)
 ## Sources
 
 * [Gaggiotti et al. 2018](https://onlinelibrary.wiley.com/doi/10.1111/eva.12593)
-* 
+  * Supplements are the `*.pdf` in this repo
 * [HierDpart](https://github.com/xinghuq/HierDpart)
