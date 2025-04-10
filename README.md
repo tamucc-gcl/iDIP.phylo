@@ -1,7 +1,7 @@
 # iDIP.phylo
 Function from Gaggiotti et al. (2018) Supplement 1 that works with HierDpart package
 
-## Dependencies
+## Install Dependencies
 
 ```r
 install.packages("ade4")
@@ -17,3 +17,9 @@ library(ape)
 library(phytools)
 library(HierDpart)
 ```
+
+## Sources
+
+* [Gaggiotti et al. 2018](https://onlinelibrary.wiley.com/doi/10.1111/eva.12593)
+* 
+* [HierDpart](https://github.com/xinghuq/HierDpart)
