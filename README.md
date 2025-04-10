@@ -2,6 +2,8 @@
 Function from Gaggiotti et al. (2018) Supplement 1 that works with HierDpart package
 
 ## Dependencies
+
+```r
 install.packages("ade4")
 install.packages("ape")
 install.packages("phytools")
@@ -14,3 +16,4 @@ library(ade4)
 library(ape)
 library(phytools)
 library(HierDpart)
+```
