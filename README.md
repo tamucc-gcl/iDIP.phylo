@@ -11,12 +11,14 @@ install.packages("promises")
 install.packages("devtools")
 library(devtools)
 install_github("xinghuq/HierDpart")
+```
 
+```r
 library(ade4)
 library(ape)
 library(phytools)
 library(HierDpart)
-source(INSERT URL TO R SCRIPT)
+source("https://raw.githubusercontent.com/tamucc-gcl/iDIP.phylo/refs/heads/main/iDIP.phylo.R")
 ```
 
 ## Creating matrix for `struct` argument
