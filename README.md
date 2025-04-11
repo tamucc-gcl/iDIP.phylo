@@ -100,18 +100,18 @@ ecosystem (total diversity) is 5.272.
 equivalents;
 * **D-beta.2** = 1.127 implies that there are 1.13 region equivalents. Thus, 4.679 x
 1.127 = 5.272 (=D_gamma).
-* **D_alpha.1** = 3.540 is interpreted as that each population within a region contains
+* **D_alpha.1** = 3.540 is interpreted as that each sample within a region contains
 3.540 allele equivalents;
-* **D_beta.1** =1.322 is interpreted as that there are 1.32 population equivalents per
+* **D_beta.1** =1.322 is interpreted as that there are 1.32 sample equivalents per
 region. Here 1.322 x 3.540 = 4.679 species per region (= D_alpha.2).
 * **Proportion.2** = 0.30 means that the proportion of total beta information found at
 the regional level is 30%.
 * **Proportion.1** = 0.70 means that the proportion of total beta information found at
-the population level is 70%.
+the sample level is 70%.
 * **Differentiation.2** =0.204 implies that the mean differentiation/dissimilarity among
 regions is 0.204. This can be interpreted as the following effective sense: the mean
 proportion of non-shared alleles in a region is around 20.4%.
-* **Differentiation.1** =0.310 implies that the mean differentiation/dissimilarity among populations within a region is 031, i.e., the mean proportion of non-shared alleles in a population is around 31.0%.
+* **Differentiation.1** = 0.310 implies that the mean differentiation/dissimilarity among samples within a region is 0.31, i.e., the mean proportion of non-shared alleles in a sample is around 31.0%.
 
 ## Example with `iDIP.phylo()`
 
@@ -130,7 +130,20 @@ Data =
   )
 row.names(Data) = paste0("zOTU",1:6)
 Data
+```
 
+```r
+> Data
+      [,1] [,2] [,3] [,4] [,5]
+zOTU1    1   16    2   10   15
+zOTU2    0    0    0    5   14
+zOTU3    7   12   11    1    0
+zOTU4    0    5   14    1   21
+zOTU5    2    1    0   11   10
+zOTU6    0    1    3    2    0
+```
+
+```r
 # Example IDIP structural hierarchy matrix
 # cols are samples
 # rows are hierarchical categorizations of the samples
@@ -143,7 +156,17 @@ Struc =
     paste0("Sample",1:5)
   )
 Struc
+```
 
+```r
+> Struc
+     [,1]        [,2]        [,3]        [,4]        [,5]       
+[1,] "Ecosystem" "Ecosystem" "Ecosystem" "Ecosystem" "Ecosystem"
+[2,] "Region1"   "Region1"   "Region2"   "Region2"   "Region2"  
+[3,] "Sample1"   "Sample2"   "Sample3"   "Sample4"   "Sample5"
+```
+
+```r
 Tree = 
   c(
     "(((zOTU1:16.66254448,zOTU2:28.86156926):43.70264926,zOTU3:59.19367445):43.49065302,(zOTU4:9.67060281,zOTU5:49.65919121,zOTU6:15.361314):54.92297125);"
@@ -177,12 +200,12 @@ PD_diff.1    0.1485795
 * PD_alpha.2 = 255.194 is interpreted as that the effective total branch length per region is 255.194.
 * PD-beta.2 = 1.075 means that there are 1.08 region equivalents. Thus, 255.194 x 1.075 = 274.388 (=PD_gamma).
 * PD_alpha.1 =223.231 is interpreted as that the effective total branch length per
-population within each region is 223.231.
-* PD_beta.1 =1.143 implies that there are 1.14 population equivalents per region. Here 223.231 x 1.143 = 255.194 (= PD_alpha.2).
+sample within each region is 223.231.
+* PD_beta.1 =1.143 implies that there are 1.14 sample equivalents per region. Here 223.231 x 1.143 = 255.194 (= PD_alpha.2).
 * PD_prop.2 = 0.351 means that the proportion of total phylogenetic beta information found in the regional level is 35.1%.
-* PD_prop.1 = 0.649 means that the proportion of total phylogenetic beta information found in the community level is 64.9%.
-* PD_diff.2 =0.124 implies that the mean phylogenetic differentiation among regions is 0.124. This can be interpreted as the following effective sense: the mean proportion of non-shared lineages in a region is around 12.5%.
-* PD_diff.1 =0.149 implies that the mean phylogenetic differentiation among communities within a region is 0.149, i.e., the mean proportion of non-shared lineages in a community is around 14.9%.
+* PD_prop.1 = 0.649 means that the proportion of total phylogenetic beta information found in the sample level is 64.9%.
+* PD_diff.2 = 0.124 implies that the mean phylogenetic differentiation among regions is 0.124. This can be interpreted as the following effective sense: the mean proportion of non-shared lineages in a region is around 12.5%.
+* PD_diff.1 =0.149 implies that the mean phylogenetic differentiation among samples within a region is 0.149, i.e., the mean proportion of non-shared lineages in a sample is around 14.9%.
 
 ## Creating matrix for `struct` argument
 
