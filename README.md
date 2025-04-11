@@ -8,7 +8,7 @@ install.packages("ade4")
 install.packages("ape")
 install.packages("phytools")
 install.packages("promises") 
-install.packages(devtools)
+install.packages("devtools")
 library(devtools)
 install_github("xinghuq/HierDpart")
 
