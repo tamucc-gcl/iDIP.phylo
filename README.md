@@ -23,6 +23,8 @@ source("https://raw.githubusercontent.com/tamucc-gcl/iDIP.phylo/refs/heads/main/
 
 ## Example with IDIP
 
+This is taken directly from 
+
 ```r
 # Example IDIP data matrix
 # cols are samples
