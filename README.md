@@ -21,7 +21,7 @@ library(HierDpart)
 source("https://raw.githubusercontent.com/tamucc-gcl/iDIP.phylo/refs/heads/main/iDIP.phylo.R")
 ```
 
-## Example with IDIP
+## Example with `IDIP()`
 
 This is taken directly from [Gaggiotti et al. 2018 Supp 1](eva12593-sup-0001-supinfo.pdf)
 
@@ -52,7 +52,9 @@ Struc =
     paste0("Sample",1:5)
   )
 Struc
+```
 
+```r
 model_estimates <- IDIP(Data,Struc)
 model_estimates
 
@@ -76,6 +78,61 @@ the population level is 70%.
 regions is 0.204. This can be interpreted as the following effective sense: the mean
 proportion of non-shared alleles in a region is around 20.4%.
 * **Differentiation.1** =0.310 implies that the mean differentiation/dissimilarity among populations within a region is 031, i.e., the mean proportion of non-shared alleles in a population is around 31.0%.
+
+## Example with `iDIP.phylo()`
+
+```r
+# Example IDIP data matrix
+# cols are samples
+# rows are either species or asv or or zotu or otu or alleles or ...
+# values are counts
+Data = 
+  cbind( 
+    c(1,0,7,0,2,0),
+    c(16,0,12,5,1,1),
+    c(2,0,11,14,0,3),
+    c(10,5,1,1,11,2),
+    c(15,14,0,21,10,0)
+  )
+row.names(Data) = paste0("zOTU",1:6)
+Data
+
+# Example IDIP structural hierarchy matrix
+# cols are samples
+# rows are hierarchical categorizations of the samples
+# values are the name of each category
+
+Struc = 
+  rbind(
+    rep("Ecosystem",5),
+    c(rep("Region1",2),rep("Region2",3)),
+    paste0("Sample",1:5)
+  )
+Struc
+
+Tree = 
+  c(
+    "(((zOTU1:16.66254448,zOTU2:28.86156926):43.70264926,zOTU3:59.19367445):43.49065302,(zOTU4:9.67060281,zOTU5:49.65919121,zOTU6:15.361314):54.92297125);"
+  )
+```
+
+```r
+model_estimates <- iDIP.phylo(Data, Struc, Tree)
+model_estimates
+```
+
+* The total branch length (Faith’s PD) in the phylogenetic tree is 321.525.
+* The weighted (by species abundance) mean of the distances from root node to each of the tips is 94.169.
+* PD_gamma = 274.388 is interpreted as that the effective total branch length in the ecosystem (total phylogenetic diversity) is 274.388.
+* PD_alpha.2 = 255.194 is interpreted as that the effective total branch length per region is 255.194.
+* PD-beta.2 = 1.075 means that there are 1.08 region equivalents. Thus, 255.194 x 1.075 = 274.388 (=PD_gamma).
+* PD_alpha.1 =223.231 is interpreted as that the effective total branch length per
+population within each region is 223.231.
+* PD_beta.1 =1.143 implies that there are 1.14 population equivalents per region. Here 223.231 x 1.143 = 255.194 (= PD_alpha.2).
+* PD_prop.2 = 0.351 means that the proportion of total phylogenetic beta information found in the regional level is 35.1%.
+* PD_prop.1 = 0.649 means that the proportion of total phylogenetic beta information found in the community level is 64.9%.
+* PD_diff.2 =0.124 implies that the mean phylogenetic differentiation among regions is 0.124. This can be interpreted as the following effective sense: the mean proportion of non-shared lineages in a region is around 12.5%.
+* PD_diff.1 =0.149 implies that the mean phylogenetic differentiation among communities within a region is 0.149, i.e., the mean proportion of non-shared lineages in a community is around 14.9%.
 
 ## Creating matrix for `struct` argument
 
