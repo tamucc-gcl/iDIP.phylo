@@ -121,6 +121,22 @@ model_estimates <- iDIP.phylo(Data, Struc, Tree)
 model_estimates
 ```
 
+```r
+> model_estimates
+                  [,1]
+Faith's PD 321.5251697
+mean_T      94.1692613
+PD_gamma   274.3881134
+PD_alpha.2 255.1936105
+PD_alpha.1 223.2311925
+PD_beta.2    1.0752155
+PD_beta.1    1.1431808
+PD_prop.2    0.3514714
+PD_prop.1    0.6485286
+PD_diff.2    0.1237661
+PD_diff.1    0.1485795
+```
+
 * The total branch length (Faith’s PD) in the phylogenetic tree is 321.525.
 * The weighted (by species abundance) mean of the distances from root node to each of the tips is 94.169.
 * PD_gamma = 274.388 is interpreted as that the effective total branch length in the ecosystem (total phylogenetic diversity) is 274.388.
