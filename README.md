@@ -55,6 +55,26 @@ model_estimates <- IDIP(Data,Struc)
 model_estimates
 
 ```
+
+* **D_gamma** = 5.272 is interpreted as that the effective number of alleles in the
+ecosystem (total diversity) is 5.272.
+* **D_alpha.2** = 4.679 is interpreted as that each region contains 4.679 allele
+equivalents;
+* **D-beta.2** = 1.127 implies that there are 1.13 region equivalents. Thus, 4.679 x
+1.127 = 5.272 (=D_gamma).
+* **D_alpha.1** = 3.540 is interpreted as that each population within a region contains
+3.540 allele equivalents;
+* **D_beta.1** =1.322 is interpreted as that there are 1.32 population equivalents per
+region. Here 1.322 x 3.540 = 4.679 species per region (= D_alpha.2).
+* **Proportion.2** = 0.30 means that the proportion of total beta information found at
+the regional level is 30%.
+* **Proportion.1** = 0.70 means that the proportion of total beta information found at
+the population level is 70%.
+* **Differentiation.2** =0.204 implies that the mean differentiation/dissimilarity among
+regions is 0.204. This can be interpreted as the following effective sense: the mean
+proportion of non-shared alleles in a region is around 20.4%.
+* **Differentiation.1** =0.310 implies that the mean differentiation/dissimilarity among populations within a region is 031, i.e., the mean proportion of non-shared alleles in a population is around 31.0%.
+
 ## Creating matrix for `struct` argument
 
 You need a matrix that follows the instructions in supplement 1, here's an example with a lot of levels
