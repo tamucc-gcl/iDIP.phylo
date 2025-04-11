@@ -1,6 +1,8 @@
 # iDIP.phylo
 Function from Gaggiotti et al. (2018) Supplement 1 that works with [HierDpart](https://github.com/xinghuq/HierDpart) package
 
+---
+
 ## Install Dependencies
 
 ```r
@@ -20,6 +22,8 @@ library(phytools)
 library(HierDpart)
 source("https://raw.githubusercontent.com/tamucc-gcl/iDIP.phylo/refs/heads/main/iDIP.phylo.R")
 ```
+
+---
 
 ## Example with `IDIP()`
 
@@ -112,6 +116,8 @@ the sample level is 70%.
 regions is 0.204. This can be interpreted as the following effective sense: the mean
 proportion of non-shared alleles in a region is around 20.4%.
 * **Differentiation.1** = 0.310 implies that the mean differentiation/dissimilarity among samples within a region is 0.31, i.e., the mean proportion of non-shared alleles in a sample is around 31.0%.
+
+---
 
 ## Example with `iDIP.phylo()`
 
@@ -207,6 +213,8 @@ sample within each region is 223.231.
 * PD_prop.1 = 0.649 means that the proportion of total phylogenetic beta information found in the sample level is 64.9%.
 * PD_diff.2 = 0.124 implies that the mean phylogenetic differentiation among regions is 0.124. This can be interpreted as the following effective sense: the mean proportion of non-shared lineages in a region is around 12.5%.
 * PD_diff.1 =0.149 implies that the mean phylogenetic differentiation among samples within a region is 0.149, i.e., the mean proportion of non-shared lineages in a sample is around 14.9%.
+
+---
 
 ## Creating matrix for `struct` argument
 
