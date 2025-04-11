@@ -39,7 +39,20 @@ Data =
     c(15,14,0,21,10,0)
   )
 Data
+```
 
+```r
+> Data
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1   16    2   10   15
+[2,]    0    0    0    5   14
+[3,]    7   12   11    1    0
+[4,]    0    5   14    1   21
+[5,]    2    1    0   11   10
+[6,]    0    1    3    2    0
+```
+
+```r
 # Example IDIP structural hierarchy matrix
 # cols are samples
 # rows are hierarchical categorizations of the samples
@@ -55,9 +68,30 @@ Struc
 ```
 
 ```r
+> Struc
+     [,1]        [,2]        [,3]        [,4]        [,5]       
+[1,] "Ecosystem" "Ecosystem" "Ecosystem" "Ecosystem" "Ecosystem"
+[2,] "Region1"   "Region1"   "Region2"   "Region2"   "Region2"  
+[3,] "Sample1"   "Sample2"   "Sample3"   "Sample4"   "Sample5"  
+```
+
+```r
 model_estimates <- IDIP(Data,Struc)
 model_estimates
+```
 
+```r
+> model_estimates
+                       [,1]
+D_gamma           5.2720254
+D_alpha.2         4.6789501
+D_alpha.1         3.5401962
+D_beta.2          1.1267539
+D_beta.1          1.3216641
+Proportion.2      0.2996764
+Proportion.1      0.7003236
+Differentiation.2 0.2036698
+Differentiation.1 0.3096642
 ```
 
 * **D_gamma** = 5.272 is interpreted as that the effective number of alleles in the
