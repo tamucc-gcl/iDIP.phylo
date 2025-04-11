@@ -21,6 +21,40 @@ library(HierDpart)
 source("https://raw.githubusercontent.com/tamucc-gcl/iDIP.phylo/refs/heads/main/iDIP.phylo.R")
 ```
 
+## Example with IDIP
+
+```r
+# Example IDIP data matrix
+# cols are samples
+# rows are either species or asv or or zotu or otu or alleles or ...
+# values are counts
+Data = 
+  cbind( 
+    c(1,0,7,0,2,0),
+    c(16,0,12,5,1,1),
+    c(2,0,11,14,0,3),
+    c(10,5,1,1,11,2),
+    c(15,14,0,21,10,0)
+  )
+Data
+
+# Example IDIP structural hierarchy matrix
+# cols are samples
+# rows are hierarchical categorizations of the samples
+# values are the name of each category
+
+Struc = 
+  rbind(
+    rep("Ecosystem",5),
+    c(rep("Region1",2),rep("Region2",3)),
+    paste0("Sample",1:5)
+  )
+Struc
+
+model_estimates <- IDIP(Data,Struc)
+model_estimates
+
+```
 ## Creating matrix for `struct` argument
 
 You need a matrix that follows the instructions in supplement 1, here's an example with a lot of levels
