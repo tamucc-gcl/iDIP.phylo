@@ -23,7 +23,7 @@ source("https://raw.githubusercontent.com/tamucc-gcl/iDIP.phylo/refs/heads/main/
 
 ## Example with IDIP
 
-This is taken directly from 
+This is taken directly from [Gaggiotti et al. 2018 Supp 1](eva12593-sup-0001-supinfo.pdf)
 
 ```r
 # Example IDIP data matrix
