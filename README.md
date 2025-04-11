@@ -167,6 +167,7 @@ Struc
 ```
 
 ```r
+# newick formatted tree where the branch tips are the zOTU
 Tree = 
   c(
     "(((zOTU1:16.66254448,zOTU2:28.86156926):43.70264926,zOTU3:59.19367445):43.49065302,(zOTU4:9.67060281,zOTU5:49.65919121,zOTU6:15.361314):54.92297125);"
