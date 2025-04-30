@@ -1,7 +1,7 @@
 # Main function iDIP.phylo
 iDIP.phylo =
   function(abun,struc,tree){
-    phyloData <- newick2phylog(tree, add.tools = FALSE)
+    phyloData <- newick2phylog(tree)
     Temp <- as.matrix(abun[names(phyloData$leaves), ])
     nodenames = c(names(phyloData$leaves),names(phyloData$nodes));
     M = matrix(0,nrow=length(phyloData$leaves),ncol=length(nodenames),dimnames=list(names(phyloData$leaves),nodenames))
